@@ -9,21 +9,27 @@ class SplashScreen extends GetWidget<SplashController> {
   Widget build(BuildContext context) {
     mediaQueryData = MediaQuery.of(context);
     return SafeArea(
-        child: Scaffold(
-            backgroundColor: theme.colorScheme.secondaryContainer,
-            body: Container(
-                width: double.maxFinite,
-                padding: EdgeInsets.symmetric(horizontal: 67.h),
-                child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      SizedBox(height: 240.v),
-                      CustomImageView(
-                          imagePath: ImageConstant.imgOrgaaalogowhite,
-                          height: 275.v,
-                          width: 244.h),
-                      SizedBox(height: 5.v)
-                    ]))));
+      child: Scaffold(
+        backgroundColor: theme.colorScheme.secondaryContainer,
+        body: SingleChildScrollView(
+          child: Center(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                SizedBox(height: 300.v),
+                CustomImageView(
+                  imagePath: ImageConstant.imgOrgaaalogowhite,
+                  height: 200.0, // Adjust the height as needed
+                  width: 200.0, // Adjust the width as needed
+                  fit: BoxFit.contain, // Ensure image fits within the container
+                ),
+                SizedBox(height: 5.v)
+              ],
+            ),
+          ),
+        ),
+      ),
+    );
   }
 }
